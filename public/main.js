@@ -5,8 +5,6 @@ const messageForm = document.getElementById('message-form');
 const messageContainer = document.getElementById('message-container');
 const nameInput = document.getElementById('name-input');
 
-const audio = new Audio('/iphone_messages.mp3')
-
 socket.on('clients-total', (data)=>{
     clientsTotal.innerText = `Total Clients: ${data}`;
 })
@@ -31,7 +29,6 @@ function sendMessage()
 }
 
 socket.on('chat-message',(data)=>{
-    audio.play();
     addMessageToUI(false,data);
 })
 
